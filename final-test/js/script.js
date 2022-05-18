@@ -9,10 +9,13 @@ $(() => {
   const box = $(".box");
   const player1 = $("#player1Name");
   const player2 = $("#player2Name");
+  const result = $("#result");
   let currentPlayer;
   const winningMessage = () => `${currentPlayer} has won!`;
   const drawMessage = () => `Game ended in a draw!`;
   const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+  result.hide();
+  let gameActive = true;
   const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -54,9 +57,10 @@ $(() => {
 
     let playerTurn = "X";
     let player1Score = [];
-    let gameActive = true;
     let player2Score = [];
+
     mainLogic();
+
     function mainLogic() {
       box.one("click", function () {
         if (gameActive) {
@@ -82,6 +86,9 @@ $(() => {
               gameActive = false;
               statusPlayer.hide();
               resetBtn.show();
+              result.show();
+
+              result.append(`<li>${currentPlayer} is the Winner</li>`);
             }
             if (
               (v.length === player2Score.length &&
@@ -91,6 +98,10 @@ $(() => {
               statusDisplay.text(winningMessage);
               gameActive = false;
               statusPlayer.hide();
+              result.show();
+
+              result.append(`<li>${currentPlayer} is the Winner</li>`);
+
               resetBtn.show();
               // statusPlayer.text(currentPlayerTurn);
             }
@@ -98,6 +109,9 @@ $(() => {
 
           if (player2Score.length + player1Score.length === 9) {
             gameActive = false;
+            result.show();
+            result.append(`<li>Draw</li>`);
+
             statusDisplay.text(drawMessage);
             statusPlayer.hide();
             resetBtn.show();
@@ -110,15 +124,15 @@ $(() => {
       $("span").text("");
       statusDisplay.text("");
       gameActive = true;
-      player1Score.length = 0;
-      player2Score.length = 0;
+      player1Score = [];
+      player2Score = [];
       resetBtn.hide();
-      mainLogic();
+
       main();
       userForm.show();
       player1.val("");
       player2.val("");
+      result.hide();
     });
   }
 });
-
