@@ -74,3 +74,11 @@ button{
 
 button:focus{background: silver;}
 .activeBox{background: silver;}
+
+
+
+#result{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
