@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body class="">
+    <header>
+      <section>
+        <h1>Tic Tac Toe</h1>
+      </section>
+    </header>
+    <main>
+      <section class="d-flex justify-content-center align-items-center h-100">
+        <button class="btn btn-primary btn-lg" id="startGameBtn">Start Game</button>
+      </section>
+      <section class="container" id="userForm">
+        <form>
+          <div class="row">
+            <div class="col py-2">
+              <label for="player1Name">Player 1 Name</label>
+              <input type="text" class="form-control my-2" id="player1Name" placeholder="Please Enter Player 1 Name">
+            </div>
+            <div class="col py-2">
+              <label for="player2Name">Player 2 Name</label>
+              <input type="text" class="form-control my-2" id="player2Name" placeholder="Please Enter Player 2 Name">
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary my-2" id="submitBtn">Start Game</button>
+        </form>
+      </section>
+      <section id="layout">
+       
+        <div id="#customContainer">
+          <div class="block">
+            <div id="box1" class="box top left" value="0">
+              <span>&nbsp;</span>
+            </div>
+            <div id="box2" class="box top" value="1">
+              <span>&nbsp;</span>
+            </div>
+            <div id="box3" class="box top right" value="2">
+              <span>&nbsp;</span>
+            </div>
+          </div>
+          <div class="block">
+            <div id="box4" class="box left" value="3">
+              <span>&nbsp;</span>
+            </div>
+            <div id="box5" class="box" value="4">
+              <span>&nbsp;</span>
+            </div>
+            <div id="box6" class="box right" value="5">
+              <span>&nbsp;</span>
+            </div>
+          </div>
+          <div class="block">
+            <div id="box7" class="box left bottom" value="6">
+            <span>&nbsp;</span>
+          </div>
+          <div id="box8" class="box bottom" value="7">
+            <span>&nbsp;</span>
+          </div>
+          <div id="box9" class="box right bottom" value="8">
+            <span>&nbsp;</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+    <footer>
+      <section>
+        <div id="statusDisplay"></div>
+        <div id="statusPlayer"></div>
+        <button class="btn btn-primary" id="resetBtn">Reset</button>
+      </section>
+    </footer>
+  </body>
+  </html>
+  
