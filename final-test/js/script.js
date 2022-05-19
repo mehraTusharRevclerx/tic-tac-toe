@@ -52,6 +52,7 @@ $(() => {
         userForm.hide();
         gamegrid.show();
         statusPlayer.show();
+        statusPlayer.text(currentPlayerTurn);
       }
     });
 
@@ -60,7 +61,6 @@ $(() => {
     let player2Score = [];
 
     mainLogic();
-
     function mainLogic() {
       box.one("click", function () {
         if (gameActive) {
@@ -70,9 +70,6 @@ $(() => {
             ? player1Score.push(Number($(this).attr("value")))
             : player2Score.push(Number($(this).attr("value")));
 
-          playerTurn = playerTurn === "X" ? "O" : "X";
-          currentPlayer =
-            currentPlayer === player1.val() ? player2.val() : player1.val();
           $(this).children("span").first().text(playerTurn);
 
           winningConditions.forEach((v, i) => {
@@ -88,7 +85,7 @@ $(() => {
               resetBtn.show();
               result.show();
 
-              result.append(`<li>${currentPlayer} is the Winner</li>`);
+              result.append(`<li>${currentPlayer} is the Winner 😍</li>`);
             }
             if (
               (v.length === player2Score.length &&
@@ -100,7 +97,7 @@ $(() => {
               statusPlayer.hide();
               result.show();
 
-              result.append(`<li>${currentPlayer} is the Winner</li>`);
+              result.append(`<li>${currentPlayer} is the Winner 😍</li>`);
 
               resetBtn.show();
               // statusPlayer.text(currentPlayerTurn);
@@ -110,12 +107,16 @@ $(() => {
           if (player2Score.length + player1Score.length === 9) {
             gameActive = false;
             result.show();
-            result.append(`<li>Draw</li>`);
+            result.append(`<li>Game is Draw 😢</li>`);
 
             statusDisplay.text(drawMessage);
             statusPlayer.hide();
             resetBtn.show();
           }
+          playerTurn = playerTurn === "X" ? "O" : "X";
+          currentPlayer =
+            currentPlayer === player1.val() ? player2.val() : player1.val();
+          statusPlayer.text(currentPlayerTurn);
         }
       });
     }
