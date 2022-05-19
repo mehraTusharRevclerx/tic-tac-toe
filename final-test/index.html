@@ -33,26 +33,41 @@
     </header>
     <main>
       <section class="d-flex justify-content-center align-items-center h-100">
-        <button class="btn btn-primary btn-lg" id="startGameBtn">Start Game</button>
+        <button class="btn btn-primary btn-lg" id="startGameBtn">
+          Start Game
+        </button>
       </section>
       <section class="container" id="userForm">
         <form>
           <div class="row">
             <div class="col py-2">
               <label for="player1Name">Player 1 Name</label>
-              <input type="text" class="form-control my-2" id="player1Name" placeholder="Please Enter Player 1 Name">
+              <input
+                type="text"
+                class="form-control my-2"
+                id="player1Name"
+                placeholder="Please Enter Player 1 Name"
+              />
             </div>
             <div class="col py-2">
               <label for="player2Name">Player 2 Name</label>
-              <input type="text" class="form-control my-2" id="player2Name" placeholder="Please Enter Player 2 Name">
+              <input
+                type="text"
+                class="form-control my-2"
+                id="player2Name"
+                placeholder="Please Enter Player 2 Name"
+              />
             </div>
           </div>
-          
-          <button type="submit" class="btn btn-primary my-2" id="submitBtn">Start Game</button>
+
+          <button type="submit" class="btn btn-primary my-2" id="submitBtn">
+            Start Game
+          </button>
         </form>
       </section>
       <section id="layout">
-       
+        <div id="statusPlayer"></div>
+
         <div id="#customContainer">
           <div class="block">
             <div id="box1" class="box top left" value="0">
@@ -78,25 +93,26 @@
           </div>
           <div class="block">
             <div id="box7" class="box left bottom" value="6">
-            <span>&nbsp;</span>
-          </div>
-          <div id="box8" class="box bottom" value="7">
-            <span>&nbsp;</span>
-          </div>
-          <div id="box9" class="box right bottom" value="8">
-            <span>&nbsp;</span>
+              <span>&nbsp;</span>
+            </div>
+            <div id="box8" class="box bottom" value="7">
+              <span>&nbsp;</span>
+            </div>
+            <div id="box9" class="box right bottom" value="8">
+              <span>&nbsp;</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section>
+        <ol id="result"></ol>
+      </section>
     </main>
-  </section>
     <footer>
       <section>
         <div id="statusDisplay"></div>
-        <div id="statusPlayer"></div>
         <button class="btn btn-primary" id="resetBtn">Reset</button>
       </section>
     </footer>
   </body>
-  </html>
-  
+</html>
